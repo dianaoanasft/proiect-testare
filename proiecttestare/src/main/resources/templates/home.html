@@ -1,0 +1,324 @@
+<!-- <head>
+   <meta charset="UTF-8"/>
+   <title th:text="#{welcome}"></title>
+</head>
+
+<body>
+<span id="hello-element" th:text="#{hello}"></span><br>
+<span id="welcome-element" th:text="#{welcome}"></span><br>
+
+<span th:text="${test}"></span><br>
+<span th:text="${user.code}"></span><br>
+
+<button type="button" th:text="#{switch-en}" onclick="window.location.href='/home?lang=en'"></button>
+<button type="button" th:text="#{switch-it}" onclick="window.location.href='/home?lang=it'"></button>
+
+
+<span th:text="#{nume-pagina}"></span><br>
+
+</body>
+
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+    <title th:text="#{title}"></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-paw"></i> <span th:text="#{shop}"></span> </a>
+    <nav class="navbar">
+        <a href="#home" th:text="#{home}"></a>
+        <a href="#about" th:text="#{about}"></a>
+        <a href="#shop" th:text="#{shop}"></a>
+        <a href="#services" th:text="#{services}"></a>
+        <a href="#contact" th:text="#{contact}"></a>
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <div class="fas fa-user" id="login-btn"></div>
+    </div>
+
+    <form action="" class="login-form">
+        <h3>sign in</h3>
+        <input type="email" name="" th:placeholder="#{enter_your_email}" class="box">
+        <input type="password" name="" th:placeholder="#{enter_your_password}" class="box" >
+        <div class="remember">
+            <input type="checkbox" name="" th:id="#{remember-me}">
+            <label th:for="#{remember-me}">remember me</label>
+        </div>
+        <input type="submit" th:value="#{sign_in}" class="btn">
+        <div class="links">
+            <a href="#">forget password</a>
+            <a href="#">sign up</a>
+        </div>
+    </form>
+
+</header>
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3><span>hi</span> welcome to Ozzy's shop </h3>
+        <a href="#" class="btn">Shop</a>
+    </div>
+
+    <img src="image/B_bg_img.jpg" class="wave" alt="">
+    <img src="image/bottom_wave.png" class="wave" alt="">
+
+</section>
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="image/despre_img.png" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Premium<span> pet food</span> manufacturer</h3>
+        <p>Pure & natural holistic pet foods for a long and healthy life</p>
+        <a href="#" class="btn">Read more</a>
+    </div>
+
+</section>
+
+<div class="dog-food">
+
+    <div class="image">
+        <img src="image/dog-treat.png" alt="">
+    </div>
+
+    <div class="content">
+        <h3><span>Yummy</span> dessert </h3>
+        <p>Healthy and delicious rewards for pets with personality</p>
+        <div class="amount">5.00 lei - 40 lei</div>
+        <a href="#"> <img src="image/shop_now_dog.png" alt=""> </a>
+    </div>
+
+</div>
+
+<div class="cat-food">
+
+    <div class="content">
+        <h3><span>Toys</span> & accessory</h3>
+        <p>We have everything you need to train and keep your pet happy, healthy, and strong</p>
+        <div class="amount">From 15.00 lei</div>
+        <a href="#"> <img src="image/shop_now_cat.png" alt=""> </a>
+    </div>
+
+    <div class="image">
+        <img src="image/cat1_dog.png" alt="">
+    </div>
+
+</div>
+
+<section class="shop" id="shop">
+
+    <h1 class="heading"> our <span> products </span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="image/dog1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>salmone food</h3>
+                <div class="amount"> 3.99 lei</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="image/dog2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>cod fish dry food</h3>
+                <div class="amount"> 3.99 lei</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="image/24xcat.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>28 x wet cat food with veal </h3>
+                <div class="amount"> 109 lei</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="image/56_cat.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>56 x wet cat food with trout </h3>
+                <div class="amount"> 207.20 lei</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="image/monge.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>monge adult light with salmon and rice 12 kg</h3>
+                <div class="amount"> 227.00 lei</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="image/monge2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Monge Dogs Puppy&Junior with Salmon and Rice 12 kg</h3>
+                <div class="amount"> 227.00 lei</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-dog"></i>
+            <h3>dog boarding</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-cat"></i>
+            <h3>cat boarding</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-bath"></i>
+            <h3>spa & grooming</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-drumstick-bite"></i>
+            <h3>healthy meal</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-baseball-ball"></i>
+            <h3>activity exercise</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>health care</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+    <div class="image">
+        <img src="image/dog_smile.jpg" alt="">
+    </div>
+
+    <form action="">
+        <h3>contact us</h3>
+        <input type="text" placeholder="your name" class="box" id="name">
+        <input type="text" placeholder="your email" class="box" id="email">
+        <input type="number" placeholder="your number" class="box" id="number">
+        <textarea name="" placeholder="your message" id="textArea" cols="30" rows="10"></textarea>
+        <input type="submit" value="send message" class="btn" id="submitButton">
+    </form>
+
+    <div class="confirm-msg-popup" id="confirmationPopup">
+        <div class="popup-title">
+            <p> Please check that your information were correctly saved</p>
+        </div>
+        <div class="popup-info">
+            <span class="information-field" id="saved-name"> </span>
+        </div>
+        <div class="popup-info">
+            <span class="information-field" id="saved-email"> </span>
+        </div>
+        <div class="popup-info">
+            <span class="information-field" id="saved-number"> </span>
+        </div>
+
+        <a id="ok-btn" class="btn">OK</a>
+    </div>
+
+</section>
+
+<section class="footer">
+
+    <img src="image/top2_wave.png" alt="">
+
+    <div class="share">
+        <a href="#" class="btn"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#" class="btn"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#" class="btn"> <i class="fab fa-instagram"></i> instagram </a>
+    </div>
+
+    <div class="credit"> created by <span> Vrote Oana Diana</span></div>
+
+</section>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
