@@ -27,20 +27,30 @@
         <div class="fas fa-user" id="login-btn"></div>
     </div>
 
-    <form action="" class="login-form">
-        <h3>sign in</h3>
-        <input type="email" name="" th:placeholder="#{enter_your_email}" class="box">
-        <input type="password" name="" th:placeholder="#{enter_your_password}" class="box" >
-        <div class="remember">
-            <input type="checkbox" name="" th:id="#{remember-me}">
-            <label th:for="#{remember-me}">remember me</label>
-        </div>
-        <input type="submit" th:value="#{sign_in}" class="btn">
-        <div class="links">
-            <a href="#">forget password</a>
-            <a href="#">sign up</a>
-        </div>
-    </form>
+    <div th:if="${currentCustomer != null && currentCustomer.loggedIn}">
+        <form action="/home/logout" class="login-form">
+            <h3>Hello</h3>
+            <h3 th:text="${currentCustomer.firstName + ' ' + currentCustomer.lastName}"></h3>
+            <input type="submit" th:value="#{log_out}" class="btn">
+        </form>
+    </div>
+
+    <div th:unless="${currentCustomer != null}">
+        <form name="loginForm" action="/home/login" class="login-form">
+            <h3>sign in</h3>
+            <input type="email" name="email" th:placeholder="#{enter_your_email}" class="box">
+            <input type="password" name="password" th:placeholder="#{enter_your_password}" class="box" >
+            <div class="remember">
+                <input type="checkbox" name="" th:id="#{remember-me}">
+                <label th:for="#{remember-me}">remember me</label>
+            </div>
+            <input type="submit" th:value="#{sign_in}" class="btn">
+            <div class="links">
+                <a href="#">forget password</a>
+                <a href="/register">sign up</a>
+            </div>
+        </form>
+    </div>
 
 </header>
 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+    <title th:text="#{title}"></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-paw"></i> <span th:text="#{shop}"></span> </a>
+
+    <div class="icons">
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <div class="fas fa-user" id="login-btn"></div>
+    </div>
+
+    <form name="loginForm" action="/home/login" class="login-form">
+        <h3>sign in</h3>
+        <input type="email" name="email" th:placeholder="#{enter_your_email}" class="box">
+        <input type="password" name="password" th:placeholder="#{enter_your_password}" class="box">
+        <div class="remember">
+            <input type="checkbox" name="" th:id="#{remember-me}">
+            <label th:for="#{remember-me}">remember me</label>
+        </div>
+        <input type="submit" th:value="#{sign_in}" class="btn">
+        <div class="links">
+            <a href="#">forget password</a>
+            <a href="/register">sign up</a>
+        </div>
+    </form>
+
+</header>
+
+<div class="wrapper">
+    <div class="register-form-wrapper">
+        <form name="registerForm" action="/registerCustomer" class="login-form register-form">
+            <h3 class="header-form-style">sign up</h3>
+            <input type="text" name="firstName" placeholder="Enter your first name" class="box input-style">
+            <input type="text" name="lastName" placeholder="Enter your last name" class="box input-style">
+            <input type="email" name="email" placeholder="Enter your email" class="box input-style">
+            <input type="password" name="password" placeholder="Enter your password" class="box input-style">
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" class="box input-style">
+            <input type="submit" value="Sign up" class="btn">
+        </form>
+    </div>
+
+    <div class="footer-style footer">
+
+        <img src="image/top2_wave.png" alt="">
+
+        <div class="share">
+            <a href="#" class="btn"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#" class="btn"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#" class="btn"> <i class="fab fa-instagram"></i> instagram </a>
+        </div>
+
+        <div class="credit"> created by <span> Vrote Oana Diana</span></div>
+
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+<style>
+    .register-form-wrapper {
+        display: flex;
+        justify-content: center;
+        transform: translate(0, 50%);
+    }
+
+    .footer-style {
+        transform: translate(0, 150%);
+    }
+
+    .register-form {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .header-form-style {
+        font-size: 45px;
+        margin-bottom: 30px
+    }
+
+    .input-style {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+</style>
