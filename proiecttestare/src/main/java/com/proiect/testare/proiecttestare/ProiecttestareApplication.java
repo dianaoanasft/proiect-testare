@@ -27,8 +27,6 @@ public class ProiecttestareApplication implements WebMvcConfigurer {
 		messageSource.setBasenames("lang/messages");
 		messageSource.setDefaultEncoding("UTF-8");
 
-		System.out.println(messageSource.getMessage("hello", null, Locale.ITALIAN));
-
 		SpringApplication.run(ProiecttestareApplication.class, args);
 	}
 

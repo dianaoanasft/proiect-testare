@@ -2,24 +2,43 @@ package com.proiect.testare.proiecttestare.model;
 
 public class UserModel {
 
-    private String code;
-    private String name;
+    private Integer code;
+    private String firstName;
+    private String lastName;
     private String email;
 
-    public String getCode() {
+    public UserModel() {
+    }
+
+    public UserModel(Integer code, String firstName, String lastName, String email) {
+        this.code = code;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

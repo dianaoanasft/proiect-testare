@@ -1,11 +1,11 @@
 package com.proiect.testare.proiecttestare;
 
-import com.proiect.testare.proiecttestare.service.UserService;
-import com.proiect.testare.proiecttestare.service.impl.DefaultUserService;
+import com.proiect.testare.proiecttestare.dao.UserDao;
+import com.proiect.testare.proiecttestare.dao.impl.DefaultUserDao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 import java.util.Locale;
@@ -31,11 +31,9 @@ public class MyBeansConfig {
         return localeChangeInterceptor;
     }
 
-    @Bean(name = "userService")
-    public UserService userService() {
-        UserService userService = new DefaultUserService();
-
-        return userService;
+    @Bean(name = "userDao")
+    public UserDao userDao() {
+        return new DefaultUserDao();
     }
 
 }
