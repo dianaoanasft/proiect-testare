@@ -15,7 +15,7 @@
 <header class="header">
     <a href="#" class="logo"> <i class="fas fa-paw"></i> <span th:text="#{shop}"></span> </a>
     <nav class="navbar">
-        <a href="#home" th:text="#{home}"></a>
+        <a href="#home" th:text="#{home}" id="navbar-home-item"></a>
         <a href="#about" th:text="#{about}"></a>
         <a href="#shop" th:text="#{shop}"></a>
         <a href="#services" th:text="#{services}"></a>
@@ -29,7 +29,7 @@
 
     <div th:if="${currentCustomer != null && currentCustomer.loggedIn}">
         <form action="/home/logout" class="login-form">
-            <h3>Hello</h3>
+            <h3 th:text="#{hello}"></h3>
             <h3 th:text="${currentCustomer.firstName + ' ' + currentCustomer.lastName}"></h3>
             <input type="submit" th:value="#{log_out}" class="btn">
         </form>
@@ -37,34 +37,22 @@
 
     <div th:unless="${currentCustomer != null}">
         <form name="loginForm" action="/home/login" class="login-form">
-            <h3>sign in</h3>
+            <h3 th:text="#{sign_in}"></h3>
             <input type="email" name="email" th:placeholder="#{enter_your_email}" class="box">
             <input type="password" name="password" th:placeholder="#{enter_your_password}" class="box" >
             <div class="remember">
                 <input type="checkbox" name="" th:id="#{remember-me}">
-                <label th:for="#{remember-me}">remember me</label>
+                <label th:for="#{remember-me}"></label>
             </div>
             <input type="submit" th:value="#{sign_in}" class="btn">
             <div class="links">
-                <a href="#">forget password</a>
-                <a href="/register">sign up</a>
+                <a href="#" th:text="#{forgot_password}"></a>
+                <a href="/register" th:text="#{sign_up}"></a>
             </div>
         </form>
     </div>
 
 </header>
-
-<section class="home" id="home">
-
-    <div class="content">
-        <h3><span>hi</span> welcome to Ozzy's shop </h3>
-        <a href="#" class="btn">Shop</a>
-    </div>
-
-    <img src="image/B_bg_img.jpg" class="wave" alt="">
-    <img src="image/bottom_wave.png" class="wave" alt="">
-
-</section>
 
 <section class="about" id="about">
 
@@ -73,9 +61,9 @@
     </div>
 
     <div class="content">
-        <h3>Premium<span> pet food</span> manufacturer</h3>
-        <p>Pure & natural holistic pet foods for a long and healthy life</p>
-        <a href="#" class="btn">Read more</a>
+        <h3 th:text="#{premium}"></h3>
+        <p th:text="#{pure_natural}"></p>
+        <a href="#" class="btn" th:text="#{read_more}"></a>
     </div>
 
 </section>
